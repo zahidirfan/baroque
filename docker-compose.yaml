@@ -1,0 +1,30 @@
+version: "2"
+services:
+  baroque:
+    image: "node:latest"
+    user: "node"
+    working_dir: /home/node/app
+
+    environment:
+      - NODE_ENV=production
+      - POSTGRES_USER=baroque_user
+      - POSTGRES_PASSWORD=baroque_password
+      - POSTGRES_DB=baroque
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 3000:3000
+    
+    command: node_modules/.bin/nodemon index.js
+    command: "yarn start"
+
+
+  baroque_db:
+        image: postgres
+        restart: always
+        ports:
+          - 5432:5432
+        environment:
+          - POSTGRES_USER=baroque_user
+          - POSTGRES_PASSWORD=baroque_password
+          - POSTGRES_DB=baroque
