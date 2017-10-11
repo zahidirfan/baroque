@@ -7,6 +7,7 @@ class StudentResult extends React.Component {
     super(props);
 
     // TODO : This data should come from the database 
+    // TODO: Ensure it comes from a webhook
 
     this.state = { student_id : this.props.student_id, 
       student_result : [
@@ -60,6 +61,7 @@ class StudentResult extends React.Component {
 
     return (
         <div>
+        <h2> Latest Exam Result </h2>
           <table className="table table-bodered table-striped">
             <thead>
                 <tr>
@@ -82,7 +84,7 @@ class StudentResult extends React.Component {
              
              })}
              
-              <tr class="info"> 
+              <tr className="info"> 
                 
                   <td> Total </td>
                   <td > {total_marks_obtained} </td>

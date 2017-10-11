@@ -13,6 +13,7 @@ class StudentProfile extends React.Component {
 	}
 	render (){ return (
 			<div align='left'>
+				<h2> Student Profile </h2>
 				<b>Name    : </b> {this.state.name} <br/>
 				<b>Class   : </b> {this.state.class} <br/>
 				<b>Address : </b> {this.state.address} <br/>

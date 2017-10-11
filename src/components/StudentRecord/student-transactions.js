@@ -49,7 +49,7 @@ class StudentTransactions extends React.Component {
         {
           date : '15-November-2016',
           fee_category : 'Payment',
-          amount : 85,
+          amount : 8500,
           type : 'credit'
         }
       ]
@@ -69,7 +69,7 @@ class StudentTransactions extends React.Component {
     this.state.student_transactions.sort(comp);
 
     for (var i=0 ; i < this.state.student_transactions.length; i++) {
-        if (this.state.student_transactions[i].status === 'credit')  {
+        if (this.state.student_transactions[i].type === 'credit')  {
           credits = this.state.student_transactions[i].amount + credits;
 
         } 
@@ -84,14 +84,19 @@ class StudentTransactions extends React.Component {
       if (type==='credit') {
         return <td > {amount}</td>;
       } else {
-        return <td class='red'> {amount}</td>;
+        return <td style ={{color:'red'}}> {amount}</td>;
       }
+    }
+
+    function accountFormat(amount){
+      return amount >0? 'Rs.' + amount : <span style= {{color:'red'}}>{'Rs. (' + -1*amount + ')' }</span>;
     }
 
 
     return (
         <div>
-          <table className="table table-bodered table-striped">
+          <h2> Recent Transactions Record </h2>
+          <table className="table table-bodered table-striped" style={{overflow:'scroll', height:'350px'}}>
             <thead>
                 <tr>
                   <th> Date </th>
@@ -115,15 +120,14 @@ class StudentTransactions extends React.Component {
              
              })}
              
-              <tr class="info"> 
-                
+              <tr className="info"> 
                   <td> Total </td>
-                  <td > {credits} </td>
-                  <td> {debits} </td>
+                  <td > {accountFormat(credits)} </td>
+                  <td> {accountFormat(-1* debits)} </td>
              </tr>
-
             </tbody>
           </table>
+          <h2 align='right'> Balance : {accountFormat(credits-debits)} </h2>
         </div>
 
 
