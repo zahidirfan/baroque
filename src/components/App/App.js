@@ -42,10 +42,6 @@ class App extends Component {
         <div className="col-sm-6 align-left">
           <StudentResult studend_id ="19"/>
         </div>
-
-
-        
-        
       </div>
     );
   }

@@ -34,6 +34,14 @@ const seedReviews = () => db.Promise.map([
  {rating: 4, review_text: "just like description",product_id:1}
  ], review => db.model('reviews').create(review));
 
+const seedStudents = () => db.Promise.map([
+ {name: "Zahid", class: "Four", address: "103 Chicago, IL ", picture:"student.jpg"},
+ {name: "Akbar", class: "Five", address: "104 Chicago, IL ", picture:"student.jpg"},
+ {name: "Tahir", class: "Three", address: "13 Chicago, IL ", picture:"student.jpg"},
+ {name: "Anthony", class: "Two", address: "105 Chicago, IL ", picture:"student.jpg"},
+ ], student => db.model('students').create(student));
+
+
  db.didSync
    .then(() => db.sync({force: true}))
    .then(seedProducts)
