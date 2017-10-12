@@ -58,7 +58,6 @@ class StudentTransactions extends React.Component {
 
   render(){
 
-    let balance = 0;
     let credits = 0;
     let debits = 0 ;
 
@@ -78,7 +77,6 @@ class StudentTransactions extends React.Component {
         }  
     }
 
-    balance = credits - debits;
 
     function findAmount(amount, type) {
       if (type==='credit') {
@@ -108,7 +106,6 @@ class StudentTransactions extends React.Component {
               {this.state.student_transactions.map(function(item, key) {
              
                return (
-                
                   <tr>
                       <td>{item.date}</td> 
                       <td> {item.fee_category} </td>

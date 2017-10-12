@@ -1,22 +1,23 @@
-version: "2"
+version: "3"
 services:
   baroque:
-    image: "node:latest"
+    image: "node:8"
     user: "node"
     working_dir: /home/node/app
-
+    deploy:
+      replicas: 10
     environment:
       - NODE_ENV=production
       - POSTGRES_USER=baroque_user
       - POSTGRES_PASSWORD=baroque_password
       - POSTGRES_DB=baroque
     volumes:
-      - ./:/home/node/app
+      - .:/home/node/app
     ports:
       - 3000:3000
+    command: "node  run start"
+
     
-    command: node_modules/.bin/nodemon index.js
-    command: "yarn start"
 
 
   baroque_db:

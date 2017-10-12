@@ -35,10 +35,10 @@ const seedReviews = () => db.Promise.map([
  ], review => db.model('reviews').create(review));
 
 const seedStudents = () => db.Promise.map([
- {name: "Zahid", class: "Four", address: "103 Chicago, IL ", picture:"student.jpg"},
- {name: "Akbar", class: "Five", address: "104 Chicago, IL ", picture:"student.jpg"},
- {name: "Tahir", class: "Three", address: "13 Chicago, IL ", picture:"student.jpg"},
- {name: "Anthony", class: "Two", address: "105 Chicago, IL ", picture:"student.jpg"},
+ {name: "Zahid", class: "Four", Address: "103 Chicago, IL ", picture:"student.jpg"},
+ { name: "Akbar", class: "Five", Address: "104 Chicago, IL ", picture:"student.jpg"},
+ { name: "Tahir", class: "Three", Address: "13 Chicago, IL ", picture:"student.jpg"},
+ { name: "Anthony", class: "Two", Address: "105 Chicago, IL ", picture:"student.jpg"}
  ], student => db.model('students').create(student));
 
 
@@ -48,5 +48,7 @@ const seedStudents = () => db.Promise.map([
    .then(products => console.log(`Seeded ${products.length} products OK`))
    .then(seedReviews)
    .then(reviews => console.log(`Seeded ${reviews.length} reviews OK`))
+   .then(seedStudents)
+   .then(students => console.log(`Seeded ${students.length} students OK`))
    .catch(error => console.error(error))
    .finally(() => db.close())

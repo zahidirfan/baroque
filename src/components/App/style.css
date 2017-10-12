@@ -2,6 +2,11 @@
   
 }
 
+.App-Brand {
+  font-family : Old English;
+  font-weight: bolder;
+}
+
 .App-logo {
   height: 80px;
 }

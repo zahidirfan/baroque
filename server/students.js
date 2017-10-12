@@ -3,9 +3,8 @@ const Student = require('../db/models/student');
 
 const router = require('express').Router()
 
-router.get('/students', function(req, res, next) {
+router.get('/', function(req, res, next) {
     Student.findAll({
-            
         })
         .then(result => {
             res.status(200).send(result);
@@ -23,14 +22,14 @@ router.get('/:id', function(req, res, next) {
         .catch(next);
 });
 
-router.post('/create', function(req, res, next) {
-    Student.createNew({
-            result = db.model('students').create(res));
-        })
-        .then(result => {
-            res.status(200).send(result);
-        })
-        .catch(next);
-});
+// router.post('/create', function(req, res, next) {
+//     Student.createNew({
+//             db.model('students').create(res)
+//         })
+//         .then(result => {
+//             res.status(200).send(result);
+//         })
+//         .catch(next);
+// });
 
 module.exports = router

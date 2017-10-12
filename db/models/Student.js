@@ -17,12 +17,9 @@ const Student = db.define('students', {
   	allowNull: false
   },
   picture: {  
-        type:Sequelize.STRING,
-        allowNull: false
-      }
-    }
+    type:Sequelize.STRING,
+    allowNull: false
   }
-
 });
 
 module.exports = Student;

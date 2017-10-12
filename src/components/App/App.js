@@ -18,18 +18,10 @@ class App extends Component {
       <div className={classnames('App', className)} {...props}>
         <div className="App-header">
           <div className="col-sm-1" align="left"><img src={logo} className="App-logo" alt="logo"/> </div>
-          <div className="col-sm-11"><h2 align="right"> Baroque  Management System </h2> </div>
+          <div className="col-sm-11"><h2 align="right"> <span className="App-Brand">Baroque </span> Management System </h2> </div>
         </div>
 
-        <div className="col-sm-12">
-          <h1> Students Record </h1>
-        </div>
-        
-        <div className="col-sm-3">
-          <StudentPicture image={student}/>
-        </div>
-
-        <div className="col-sm-3">
+        <div className="col-sm-6">
           <StudentProfile></StudentProfile >
         </div>        
 
