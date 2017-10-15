@@ -15,9 +15,8 @@ services:
       - .:/home/node/app
     ports:
       - 3000:3000
-    command: "node run seed"
-    command: "node  run start"
-    depends_on: baroque_db
+    command: "npm run seed"
+    command: "npm  run start"
 
   baroque_db:
         image: postgres
