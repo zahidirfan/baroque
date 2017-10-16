@@ -40,9 +40,9 @@ class StudentProfile extends React.Component {
     		//this.setState( {userInput : document.getElementById("student_selection").value});
     		console.log("Selection Changed to : " + value.value);
     		this.setState({
-    			name : this.state.data[value.value].name,
-    			class : this.state.data[value.value].class,
-    			address : this.state.data[value.value].Address
+    			name : this.state.data[value.value-1].name,
+    			class : this.state.data[value.value-1].class,
+    			address : this.state.data[value.value-1].Address
     		});
   	}
 
