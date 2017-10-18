@@ -4,8 +4,6 @@ services:
     image: "node:8"
     user: "node"
     working_dir: /home/node/app
-    deploy:
-      replicas: 10
     environment:
       - NODE_ENV=production
       - POSTGRES_USER=baroque_user
