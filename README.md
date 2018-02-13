@@ -1,6 +1,6 @@
 # Baroque Management System
 
-## Introdution
+## Introduction
 
 A simple management system to allow schools to work in an efficient manner. 
 
@@ -11,12 +11,13 @@ Please ensure you have docker installed from this [website](www.docker.com) for 
 ```
 $ git clone https://www.github.com/zahidirfan/baroque.git
 $ cd baroque
+$ npm install
 $ docker-compose up -d
 ```
 Open your browser and got to localhost:3000 and you should be good to go. 
 
 ## Features
-The current stage the sytem is not connected to the database for any data but in future it should. 
+The current stage the system is not connected to the database for any data but in future it should.
 - Student Profile Page has been implemented. 
   - Dummy Data and Picture
   - Dummy Transactions List

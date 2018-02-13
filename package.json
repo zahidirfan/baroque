@@ -7,6 +7,7 @@
     "body-parser": "^1.18.2",
     "classnames": "^2.2.5",
     "concurrently": "^3.5.0",
+    "brace-expansion": "^1.1.11",
     "debug": "^3.1.0",
     "docker-nodemon": "^1.11.0",
     "express": "^4.16.2",
