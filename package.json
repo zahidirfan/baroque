@@ -26,7 +26,8 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.13.8",
-    "yargs": "^9.0.1"
+    "yargs": "^9.0.1",
+    "react-google-login": "*"
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"nodemon server\"",
