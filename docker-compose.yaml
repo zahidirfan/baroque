@@ -1,19 +1,16 @@
 version: "3"
 services:
   baroque:
-    image: "node:8"
-    user: "node"
-    working_dir: /home/node/app
+    build: .
+    working_dir: /app
     environment:
       - NODE_ENV=production
       - POSTGRES_USER=baroque_user
       - POSTGRES_PASSWORD=baroque_password
       - POSTGRES_DB=baroque
-    volumes:
-      - .:/home/node/app
     ports:
-      - 3000:3000
-    command: bash -c "npm install && npm run start"
+      - 3002:3000
+    command: npm run start
     depends_on:
       - migration
 
@@ -21,14 +18,14 @@ services:
         image: postgres
         restart: always
         ports:
-          - 5432:5432
+          - 5433:5432
         environment:
           - POSTGRES_USER=baroque_user
           - POSTGRES_PASSWORD=baroque_password
           - POSTGRES_DB=baroque
-  
+
   # The is added to ensure the migrations run as a separate service and not a regular thing to be done when server restarts
-  
+
   migration:
     image: "node:8"
     user: "node"
