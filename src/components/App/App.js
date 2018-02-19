@@ -7,20 +7,16 @@ import StudentResult from '../StudentRecord/student-result';
 import StudentTransactions from '../StudentRecord/student-transactions';
 import NewsFeed from '../StudentRecord/news-feed'
 import GoogleAuth from '../Auth/google-auth';
+import Header from '../Header/Header';
 
 
 class App extends Component {
   render() {
     const { className, ...props } = this.props;
     return (
-
       <div className={classnames('App', className)} {...props}>
           <GoogleAuth/>
-          <div className="App-header">
-          <div className="col-sm-1" align="left"><img src={logo} className="App-logo" alt="logo"/> </div>
-          <div className="col-sm-11"><h2 align="right"> <span className="App-Brand">Baroque </span> Management System </h2> </div>
-        </div>
-
+          <Header/>
         <div className="col-sm-6">
           <StudentProfile/>
         </div>        
