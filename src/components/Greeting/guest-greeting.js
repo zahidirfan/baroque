@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
-import GoogleAuth from '../Auth/google-auth';
 import Header from '../Header/Header';
+import '../Auth/style.css';
 
 class GuestGreeting extends React.Component {
     constructor(props) {
@@ -11,8 +11,7 @@ class GuestGreeting extends React.Component {
     render() {
         const {className, ...props} = this.props;
         return <div className={classnames('App', className)} {...props}>
-            <GoogleAuth/>
-            <Header/>
+            <Header button={this.props.button}/>
         </div>;
     }
 }

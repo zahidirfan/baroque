@@ -8,9 +8,9 @@ class Greeting extends React.Component {
     render() {
         const isLoggedIn = this.props.isLoggedIn;
         if (isLoggedIn) {
-            return <UserGreeting />;
+            return <UserGreeting button={this.props.button}/>;
         }
-        return <GuestGreeting />;
+        return <GuestGreeting button={this.props.button}/>;
 
     }
 }

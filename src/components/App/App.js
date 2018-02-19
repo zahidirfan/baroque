@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Greeting from '../Greeting/app-greeting';
+import GoogleAuth from '../Auth/google-auth';
 
 
 class App extends Component {
   render() {
-    return (<Greeting isLoggedIn={true} />);
+    return (<GoogleAuth/>);
   }
 }
 

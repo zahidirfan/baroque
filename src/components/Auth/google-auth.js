@@ -1,6 +1,8 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 import { GoogleLogout } from 'react-google-login';
+import Greeting from '../Greeting/app-greeting';
+import './style.css'
 
 class GoogleAuth extends React.Component{
     constructor(props) {
@@ -34,21 +36,18 @@ class GoogleAuth extends React.Component{
     }
 
     render(){
-
         const isLoggedIn = this.state.isLoggedIn;
-
-        let item = null;
+        let button = null;
         if (isLoggedIn) {
-            item = <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout}/>;
+            button = <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout}/>;
         } else {
-            item = <GoogleLogin
+            button = <GoogleLogin
                 clientId="216851034999-2hgd5h0j65kqkumkrkikpduplmj2mkr9.apps.googleusercontent.com"
                 buttonText="Login"
                 onSuccess={this.login}
-                onFailure={this.responseGoogleFailure}
-            />;
+                onFailure={this.responseGoogleFailure}/>;
         }
-        return(item);
+        return <Greeting isLoggedIn={isLoggedIn} button={button} />
     }
 }
 
