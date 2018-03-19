@@ -2,11 +2,10 @@ version: "3"
 services:
   baroque:
     build: .
-    working_dir: /app
     environment:
       - NODE_ENV=production
-      - POSTGRES_USER=baroque_user
-      - POSTGRES_PASSWORD=baroque_password
+      - POSTGRES_USER=basit
+      - POSTGRES_PASSWORD=basit123
       - POSTGRES_DB=baroque
     ports:
       - 3002:3000
@@ -20,8 +19,8 @@ services:
         ports:
           - 5433:5432
         environment:
-          - POSTGRES_USER=baroque_user
-          - POSTGRES_PASSWORD=baroque_password
+          - POSTGRES_USER=basit
+          - POSTGRES_PASSWORD=basit123
           - POSTGRES_DB=baroque
 
   # The is added to ensure the migrations run as a separate service and not a regular thing to be done when server restarts
@@ -32,8 +31,8 @@ services:
     working_dir: /app
     environment:
       - NODE_ENV=production
-      - POSTGRES_USER=baroque_user
-      - POSTGRES_PASSWORD=baroque_password
+      - POSTGRES_USER=basit
+      - POSTGRES_PASSWORD=basit123
       - POSTGRES_DB=baroque
     volumes:
       - .:/app

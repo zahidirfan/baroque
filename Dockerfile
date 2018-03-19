@@ -1,4 +1,5 @@
 FROM node:8
-ADD . /app
+RUN mkdir /app
 WORKDIR /app
+ADD . /app
 RUN npm install
