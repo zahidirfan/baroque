@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Installing Dependencies"
+npm install
+
 echo "Creating baroque container"
 docker-compose build baroque
 

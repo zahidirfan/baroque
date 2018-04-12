@@ -1,7 +1,11 @@
 version: "3"
 services:
   baroque:
-    build: .
+#    build: .
+    image: "node:8"
+    working_dir: /app
+    volumes:
+      - .:/app
     environment:
       - NODE_ENV=production
       - POSTGRES_USER=basit
