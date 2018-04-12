@@ -5,7 +5,7 @@ const pkg = require('../package.json')
 
 const name = process.env.POSTGRES_DB || pkg.name;
 
-const url = process.env.DATABASE_URL || `postgres://basit:basit123@baroque_db:5432/${name}`;
+const url = process.env.DATABASE_URL || `postgres://baroque_user:baroque_password@baroque_db:5432/${name}`;
 
 console.log(chalk.yellow(`Opening database connection to ${url}${name}`));
 
