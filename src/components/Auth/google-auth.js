@@ -10,12 +10,13 @@ class GoogleAuth extends React.Component{
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.responseGoogleFailure = this.responseGoogleFailure.bind(this);
-        const userSession = sessionStorage.getItem('user');
-        if ((userSession !== null)){
-            this.state = {isLoggedIn: true};
-        }else {
-            this.state = {isLoggedIn: false};
-        }
+        this.state = {isLoggedIn: false};
+        // const userSession = sessionStorage.getItem('user');
+        // if ((userSession !== null)){
+        //     this.state = {isLoggedIn: true};
+        // }else {
+        //     this.state = {isLoggedIn: false};
+        // }
     }
     responseGoogleFailure(response) {
         this.setState({
