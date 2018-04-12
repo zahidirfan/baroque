@@ -11,25 +11,27 @@ class GoogleAuth extends React.Component{
         this.logout = this.logout.bind(this);
         this.responseGoogleFailure = this.responseGoogleFailure.bind(this);
         this.state = {isLoggedIn: false};
+        // const userSession = sessionStorage.getItem('user');
+        // if ((userSession !== null)){
+        //     this.state = {isLoggedIn: true};
+        // }else {
+        //     this.state = {isLoggedIn: false};
+        // }
     }
     responseGoogleFailure(response) {
-        console.log('Callback');
-        console.log(response);
         this.setState({
             isLoggedIn: false
         })
     }
 
+
     login(response){
-        console.log('Logged In');
-        console.log(response.profileObj);
         this.setState({
             isLoggedIn: true
         })
 
     }
     logout(response){
-        console.log('Logged Out');
         this.setState({
             isLoggedIn: false
         })
@@ -39,7 +41,7 @@ class GoogleAuth extends React.Component{
         const isLoggedIn = this.state.isLoggedIn;
         let button = null;
         if (isLoggedIn) {
-            button = <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout}/>;
+            button = <GoogleLogout buttonText="Logout" onLogoutSuccess={this.logout} onLogoutFailure={this.responseGoogleFailure}/>;
         } else {
             button = <GoogleLogin
                 clientId="216851034999-2hgd5h0j65kqkumkrkikpduplmj2mkr9.apps.googleusercontent.com"
@@ -48,6 +50,7 @@ class GoogleAuth extends React.Component{
                 onFailure={this.responseGoogleFailure}/>;
         }
         return <Greeting isLoggedIn={isLoggedIn} button={button} />
+        // return <Greeting isLoggedIn={true} button={button} />
     }
 }
 
