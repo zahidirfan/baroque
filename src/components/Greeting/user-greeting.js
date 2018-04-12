@@ -16,7 +16,7 @@ class UserGreeting extends React.Component {
     constructor(props) {
         super(props);
         if(!localStorage.getItem('a')){
-            localStorage.setItem('a', JSON.stringify({x: 0, y: 0, w: 5, h: 9, isDraggable: false}));
+            localStorage.setItem('a', JSON.stringify({x: 0, y: 0, w: 5, h: 9, minH: 9, isDraggable: false}));
         }
         if(!localStorage.getItem('b')) {
             localStorage.setItem('b', JSON.stringify({x: 8, y: 0, w: 5, h: 9, minH: 5, minW: 3}));
